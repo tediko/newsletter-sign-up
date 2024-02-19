@@ -1,0 +1,121 @@
+/* SIGN-UP */
+.sign-up {
+    background: var(--c-white);
+}
+
+.sign-up__preview {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.sign-up__image {
+    width: 100%;
+    height: 100%;
+}
+
+.sign-up__content {
+    padding: 0 25px 25px 25px;
+}
+
+.sign-up__heading {
+    margin-bottom: 24px;
+}
+
+.sign-up__desc {
+    margin-bottom: 29px;
+}
+
+.sign-up__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 42px;
+    list-style: none;
+}
+
+.sign-up__item {
+    position: relative;
+    padding-left: 38px;
+}
+
+.sign-up__item::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    background: url(../assets/images/icon-list.svg);
+    background-repeat: no-repeat;
+}
+
+.sign-up__form {
+    display: flex;
+    flex-flow: column;
+}
+
+.sign-up__label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.sign-up__error {
+    display: none;
+    color: var(--c-red-tomato);
+}
+
+.sign-up__error.active {
+    display: inline-block;
+    animation: horizontal-shaking 250ms ease-in-out;
+}
+
+.sign-up__input {
+    padding: 15px 20px 15px 23px;
+    border: 1px solid var(--c-grey-40);
+    border-radius: 8px;
+    margin-bottom: 26px;
+    transition: color 150ms ease-in-out,
+        background 200ms ease-in-out,
+        border 200ms ease-in-out;
+}
+
+.sign-up__input.active {
+    color: var(--c-red-tomato);
+    border: 1px solid var(--c-red-tomato);
+    background: var(--c-red-tomato-10);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 30.0625em) {
+    .sign-up {
+        border-radius: 40px;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .sign-up__input:hover {
+        border: 1px solid var(--c-grey-dark-slate);
+    }
+}
+
+@media (min-width: 62.5em) {
+    .sign-up__container {
+        display: flex;
+        padding: 25px 25px 25px 66px;
+        max-width: 58.3rem;
+        gap: 65px;
+    }
+
+    .sign-up__preview {
+        order: 1;
+        margin: 0;
+    }
+    
+    .sign-up__content {
+        flex: 1;
+        margin-top: 72px;
+        padding: 0;
+    }
+}

@@ -1,0 +1,43 @@
+/* GLOBALS AND VARIABLES */
+:root {
+    font-family: 'Roboto', sans-serif;
+    
+    --c-red-tomato: hsl(4, 100%, 67%);
+    --c-red-tomato-10: hsla(4, 100%, 67%, 0.1);
+    --c-red-rose: hsl(346, 98%, 66%);
+    --c-grey: hsl(231, 7%, 60%);
+    --c-grey-40: hsla(231, 7%, 60%, 40%);
+    --c-grey-dark-slate: hsl(234, 29%, 20%);
+    --c-grey-charcoal: hsl(235, 18%, 26%);
+    --c-white: hsl(0, 0%, 100%);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+body.active {
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    background: var(--c-grey-charcoal)
+}
+
+button:focus-visible, input:focus-visible {
+    outline: 3px dotted var(--c-grey-dark-slate);
+    outline-offset: 3px;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 48.0625em) {
+    main {
+        padding: 20px;
+        align-items: center;
+    }
+}
+

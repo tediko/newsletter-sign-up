@@ -1,0 +1,118 @@
+/* UTILITIES */
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--c-grey-dark-slate);
+}
+
+.text--sm {
+    font-size: 0.75rem;
+}
+
+.text--700 {
+    font-weight: 700;
+}
+
+.h {
+    font-weight: 700;
+    color: var(--c-grey-dark-slate);
+}
+
+.h--lg {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1;
+}
+
+.h--big {
+    font-size: 2.3rem;
+    line-height: 1;
+}
+
+.cta {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--c-white);
+    background: var(--c-grey-dark-slate);
+    border: none;
+    padding: 18px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cta span {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 350ms ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    z-index: 999;
+}
+
+/* ANIMATIONS */
+@keyframes horizontal-shaking {
+    0% { 
+        display: none;
+        transform: translateX(0);
+        opacity: 0;
+    }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { 
+        display: inline-block;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes vertical-slide {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: translateY(calc(-50% + 20px));
+    }
+    100% {
+        display: block;
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 48.0625em) {
+    .cta {
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 300ms ease-in-out;
+    }
+    
+    .cta::after {
+        position: absolute;
+        content: '';
+        inset: 0;
+        background: linear-gradient(90deg, var(--c-red-rose) 0%, var(--c-red-tomato) 100%);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+    }
+
+    .cta:hover {
+        box-shadow: 2px 12px 30px -11px var(--c-red-rose);
+    }
+
+    .cta:hover::after {
+        opacity: 1;
+    }
+}
